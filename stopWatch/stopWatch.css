@@ -1,0 +1,87 @@
+:root{
+    --yelow-color:#fada3aff;
+}
+html{
+    box-sizing: border-box;
+}
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+body{
+    background: #455;
+    color: #eee;
+    text-transform: uppercase;
+}
+body .content{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.content h1{
+    position: relative;
+    top: 200px;
+    letter-spacing: 3px;
+    color: grey;
+}
+.content .timer{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.content .timer::after{
+    position: absolute;
+    content: "";
+    height: 1px;
+    width: 100vw;
+    top: 50.1%;
+    left: 0;
+    background: var(--yelow-color);
+}
+.content .timer .dot{
+    font-size: 20px;
+    font-weight: bolder;
+}
+.content .timer .box .block{
+    padding: 5px;
+    font-size: 40px;
+    font-weight: bolder;
+    text-align: center;
+    min-width: 70px;
+    background: #455;
+    border: 1px solid var(--yelow-color);
+    box-shadow: 0 0  30px var(--yelow-color);
+    position: relative;
+    z-index: 10;
+}
+.content .timer .box p{
+    padding: 3px;
+    font-size: 12px;
+    background: var(--yelow-color);
+    color: #455;
+    text-align: center;
+    position: relative;
+    top: -2px;
+    z-index: 20;
+}
+.content .timer .buttons{
+    position: absolute;
+    bottom: 100px;
+}
+.content .timer .buttons button{
+    padding: 10px;
+    margin: 10px;
+    font-size: 15px;
+    font-weight: bolder;
+    outline: none;
+    text-transform: uppercase;
+}
+.timer .buttons button:hover{
+    background: var(--yelow-color);
+}
