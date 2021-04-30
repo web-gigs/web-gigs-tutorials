@@ -1,0 +1,107 @@
+:root{
+    --white-grey:#E2E2E2;
+    --light-brown:#707070;
+    --wrapper-bg-color:#1c1E21;
+}
+html{
+   box-sizing: border-box;
+}
+*,*::before,*::after{
+   margin: 0;
+   padding: 0;
+   box-sizing: inherit;
+}
+body{
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: linear-gradient(to bottom right,DeepSkyblue,PaleGreen,#a2d5c6,Greenyellow,#5c3c92);
+   background-size: 1000% 1000%;
+   background-position: 0% 50%;
+   animation:anime 60s linear 0s infinite;
+}
+body .wrapper{
+   position: relative;
+   padding: 60px 40px;
+   border-radius: 8px;
+   height: 20rem;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   justify-content: space-evenly;
+   background: var(--wrapper-bg-color);
+   box-shadow: 0 15px 20px rgba(0,0,0,0.15);
+}
+.wrapper .valueBox{
+   width: 80%;
+   padding: 10px 40px;
+   position: relative;
+   
+}
+.valueBox #inputValue{
+   color: var(--white-grey);
+   font-weight: bolder;
+   width: 100%;
+   border: none;
+   outline: none;
+   height: 35px;
+   font-size: 14px;
+   padding: 20px 5px;
+   letter-spacing: 1px;
+   border-bottom: 2px solid var(--white-grey);
+   background-color: transparent;
+}
+.valueBox #inputValue::placeholder{
+   font-size: 10px;
+   font-weight: bolder;
+}
+.valueBox #outputValue{
+    width: 100%;
+    border: none;
+    outline: none;
+    height: 35px;
+    border-radius: 5px;
+    border: 2px solid #d2d2d2;
+    margin-top: 8px;
+    padding: 0 10px;
+    font-size: 15px;
+}
+.valueBox #outputValue:focus{
+    border: 2px solid #3164FF;
+}
+.valueBox label{
+   font-size: 16px;
+   padding-top: 30px;
+   margin-right: 10px;
+   font-weight: bolder;
+   color: var(--light-brown);
+}
+.wrapper #calculate{
+   position: absolute;
+   bottom: 20px;
+   left: 20%;
+   color: var(--white-grey);
+   outline: none;
+   font-size: 10px;
+   font-weight: bolder;
+   margin-top: 10px;
+   border-radius: 2px;
+   padding: 4px 10px;
+   background: linear-gradient(
+       -135deg,
+       #0048ce,
+       #008bfd
+   );
+}
+.wrapper h2{
+   position: relative;
+   bottom: 20px;
+   left: 20%;
+   color: var(--light-brown);
+}
+@keyframes anime{
+    50%{
+        background-position: 100% 50%;
+    }
+}
