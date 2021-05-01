@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fontawesome-free-5.14.0-web/css/all.min.css">
+    <link rel="icon" href="img/javascript.png" type="icon/logo">
+    <link rel="stylesheet" href="chat.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="content">
+            <header class="header">
+                <div class="headerSide">
+                    <img src="img/Octocat.png" alt="No Image">
+                    <div class="RobotName">
+                        <span>Kuku Bot</span>
+                        <div class="active">
+                            <i class="fa fa-circle"></i>
+                            <span id="active">active</span>
+                        </div>
+                    </div>
+                </div>
+                <section class="navBar">
+                  <div class="btn" >
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  </div>
+                  <div class="dropdown">
+                     <ul class="dropdown-menu">
+                      <li class="dropdown-item">
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <a href="#">Rate</a>
+                       </li>
+                       <li class="dropdown-item">
+                         <i class="fa fa-users" aria-hidden="true"></i>
+                         <a href="#">Follow</a>
+                       </li>
+                       <li class="dropdown-item">
+                        <i class="fas fa-video" aria-hidden="true"></i>
+                        <a href="#">Tutorial</a>
+                      </li>
+                       <li class="divider"></li>
+                       <li class="dropdown-item">
+                           <i class="fa fa-window-close" aria-hidden="true"></i>
+                           <a href="#">Exit</a>
+                       </li>
+                     </ul>
+                    </div>
+                </section>
+            </header>
+            <section class="massege-box">
+            </section>
+        </div>
+        <footer class="footer">
+            <textarea id="inputBox" placeholder="your Message" required></textarea>
+            <button id="sendMessage"><i class="fa fa-paper-plane"></i></button>
+        </footer>
+    </div>
+    <script src="chat.js"></script>
+    <script src="words.js"></script>
+</body>
+</html>

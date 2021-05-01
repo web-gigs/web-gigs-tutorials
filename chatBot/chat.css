@@ -1,0 +1,232 @@
+:root{
+    --grey-color:#ccc;
+    --white-Color:#fff;
+    --Header-background:#322e2f;
+    --color-active-fa:#1bfb36ff;
+    --list-menu-background:#e0dfdc;
+    --Send-Message-background:#322e2f;
+}
+html{
+    box-sizing: border-box;
+}
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing:inherit;
+}
+body{
+   height: 100vh;
+   width: 100vw;
+}
+body .wrapper{
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.wrapper .content{
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.content .massege-box{
+    flex-grow: 1;
+    padding: 150px 20px 20px 20px;
+    background:var(--white-Color);
+    display: inline-flex;
+    flex-direction: column;
+}
+.content .header{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    height: 120px;
+    align-items: center;
+    color: var(--white-Color);
+    justify-content:space-between;
+    box-shadow: 0 5px 5px 0 #ccc;
+    border-bottom: 1px solid #333;
+    background: var(--Header-background);
+    z-index: 1;
+}
+/*style the sideBar menu*/
+.header .navBar{
+    margin: 30px 30px 25px 0;
+    position: relative;
+}
+.navBar .btn{
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+.btn i{
+    font-size: 30px;
+    font-weight: bolder;
+    color:#e0dfdc;
+}
+.navBar .dropdown{
+    width: 100px;
+    padding: 20px 10px;
+    border-radius: 8px;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    visibility: hidden;
+    transform: scale(0);
+    transition:all .5s linear;
+    transform-origin: top right;
+    background: var(--list-menu-background);
+}
+.dropdown .dropdown-menu{    
+    height:100%;
+    width:100%;
+    list-style-type:none;
+    cursor: pointer;
+}
+.dropdown-menu .dropdown-item{
+    display:flex;
+    align-items:center;
+    margin:var(--radius);
+    padding:8px;
+    border-radius:var(--radius);
+    font-size:12px;
+    color:#5e5e5e;
+    position:relative;
+    overflow:hidden;
+}
+.dropdown-item i{
+    color:#5e5e5e;
+    width:16px;
+    height:16px;
+    margin-right:10px;
+}
+.dropdown-item a{
+    display: inline;
+    color: #919d90;
+    text-decoration: none;
+}.dropdown-item a:hover{
+  color: #8ef7aa;
+}
+.dropdown-menu .divider{
+    height:0.5px;
+    background-color:#ccc;
+    border-radius:var(--radius);
+    margin:8px 4px;
+}
+/*style the image logo */
+.header .headerSide{
+    width: 50%;
+    padding: 5px;
+    display: flex;
+    font-size: 20px;
+    margin-left: 20px;
+    font-weight: bolder;
+    align-items: center;
+}
+.headerSide .active{
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.headerSide .active .fa{
+    color: var(--color-active-fa);
+}
+.headerSide  img{
+    width: 80px;
+    height: 80px;
+    margin-right: 8px;
+    border-radius: 50%;
+    border: 3px solid #3498db;
+    background: var(--white-Color);
+}
+/*style the footer of the kuku bot app */
+.wrapper .footer{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-shrink: 0;
+    position: relative;
+    border-top: 1px solid var(--grey-color);
+}
+.footer #inputBox{
+    height: 100%;
+    width: 80%;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bolder;
+    font-size: 1.0625rem;
+    padding-left: 10px;
+    background: var(--grey-color);
+}
+.footer #inputBox::-webkit-scrollbar{
+    display: none;
+}
+.footer #inputBox:focus{
+   border:1px solid #3498db;
+}
+.footer #sendMessage{
+    height: 100%;
+    width: 25%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: var(--Send-Message-background);
+}
+#sendMessage .fa-paper-plane{
+    font-size: 30px;
+    font-weight: bolder;
+    color: var(--grey-color);
+}
+/*styling incomming messages*/
+.massege-box .msg_kukubot{
+    position: relative;
+    width: fit-content;
+    margin-bottom: 5px;
+    padding: 15px 15px;
+    color: aliceblue;
+    background: #3498db;
+    border-radius: 0 8px 8px 8px;
+}
+.massege-box .userInputText{
+    width: fit-content;
+    margin-bottom: 5px;
+    padding: 15px 15px;
+    color: aliceblue;
+    background: #ccc;
+    word-wrap:break-word;
+    position: relative;
+    left: 10%;
+    border-radius: 8px 0 8px 8px;
+}
+#currentTime,#kukuTime{
+    position: absolute;
+    font-size: 8px;
+    font-weight: bolder;
+    bottom: 6px;
+    right: 6px;
+}
+@media(min-width:520px){
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(to bottom right,DeepSkyblue,PaleGreen,Tomato,Greenyellow,orange);
+        background-size: 1000% 1000%;
+        background-position: 0% 50%;
+        animation:anime 60s linear 0s infinite;
+    }
+    body .wrapper{
+        width: 520px;
+    }
+    .content .header{
+        position: absolute;
+    }
+    @keyframes anime{
+        50%{
+            background-position: 100% 50%;
+        }
+    }
+}
