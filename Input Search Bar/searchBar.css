@@ -1,0 +1,75 @@
+:root{
+    --grey-color:#ccc;
+    --search-bar-icon:#6078EA;
+    --background-color:#0d1137;
+    --placeholder-color:#5c3c92;
+    --field-container-shadow:rgba(0,0,0,0.2);
+}
+html{
+    box-sizing: border-box;
+}
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+body .container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:#333 url("img/beach.jpg") no-repeat center center /cover;
+}
+.container .field-container{
+    position: relative;
+    width: 80%;
+    height: 60px;
+    border: none;
+    cursor: move;
+    border-radius: 5px;
+    background: var(--background-color);
+    box-shadow: 0 20px 25px var(--field-container-shadow);
+}
+.field-container .icons-container{
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 60px;
+    cursor: pointer;
+}
+.icons-container .float-btn{
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    display: none;
+    cursor: pointer;
+    background: transparent;
+    transition: 2s ease-in-out;
+    color: var(--search-bar-icon);
+}
+.field-container .field{
+    position: absolute;
+    right: 0;
+    border: none;
+    height: 100%;
+    width: 60%;
+    cursor: pointer;
+    font-size: 12px;
+    padding-left: 10px;
+    font-weight: bolder;
+    color:var(--grey-color);
+    text-transform: capitalize;
+    border-left: 1px solid #333;
+    border-radius: 0 5px 5px 0;
+}
+.field-container .field::placeholder{
+    font-size: 12px;
+    font-weight: bolder;
+    color: var(--placeholder-color);
+}
+.field-container .field:focus{
+    border: 1px solid var(--placeholder-color);
+    box-shadow: 0 0 5px  var(--placeholder-color),
+                 0 0 5px  var(--placeholder-color);
+}
