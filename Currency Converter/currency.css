@@ -1,0 +1,104 @@
+:root{
+    --header-color:#eee;
+    --global-color:#333;
+    --container-bg:#141313;
+    --btn-background:#F2AA4CFF;
+    --amount-color:rgb(245, 215, 176);
+    --container-box-shadow:0 10px 15px rgba(20,20,20,0.15);
+}
+html{
+    box-sizing: border-box;
+}
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--global-color);
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    background-color: var(--btn-background);
+}
+.container{
+    width: 95%;
+    max-width: 500px;
+    padding: 20px 10px;
+    border-radius: 10px;
+    background-color: var(--container-bg);
+    box-shadow: var(--container-box-shadow);
+}
+.row{
+    width: 96%;
+    height: 100%;
+    margin:0 auto;
+}
+.colum{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+form{
+    width: 100%;
+    max-width: 425px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+label{
+    width: 100%;
+    align-self: flex-start;
+    font-weight: bolder;
+    color: var(--header-color);
+}
+select,input[type="text"]{
+    display: block;
+    width: 100%;
+    height: 45px;
+    padding: 10px;
+    max-width: 425px;
+    font-weight: bolder;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    border: 1px solid var(--btn-background);
+    box-sizing: border-box;
+}
+.btn{
+    border: 0;
+    width: 100%;
+    height: 45px;
+    display: block;
+    margin: 0 auto;
+    color: #ffff;
+    cursor: pointer;
+    margin-top: 15px;
+    max-width: 425px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    letter-spacing: 2.2px;
+    background-color: var(--btn-background);
+}
+.btn:hover{
+    background-color: var(--amount-color);
+}
+.banner{
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--header-color);
+}
+.amount{
+    font-weight: bolder;
+    color: var(--amount-color);
+    text-align: center;
+}
+#currency{
+    font-size: 2.5rem;
+}
+#country-code{
+    font-size: 1.5rem;
+}

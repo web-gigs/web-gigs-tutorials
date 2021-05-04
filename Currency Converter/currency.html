@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/javascript.png" type="icon/logo">
+    <link rel="stylesheet" href="currency.css">
+    <title>currency conveter</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1 class="banner">Currency Conveter</h1>
+            <div class="colum">
+                <form action="" method="post">
+                    <label for="amount">Amount:
+                        <input type="text" id="amount" type="text" placeholder="Amount" required>
+                    </label>
+                    <label for="rate">From:
+                        <select id="rate">
+                            <option value="USD">US Dollar (USD)</option>
+                            <option value="MXN">Mexican Peso (MXN)</option>
+                            <option value="XOF">Benise CFA (XOF)</option>
+                            <option value="INR">Indian Rupee (INR)</option>
+                            <option value="CAD">Canadian Dollar (CAD)</option>
+                            <option value="HTG">Haitian Gourde (HTG)</option>
+                            <option value="XBT">Bitcoin (BTC)</option>
+                            <option value="EUR">Cuban Peso (CUP)</option>
+                            <option value="GBP">British Pound (BGP)</option>
+                            <option value="XAF">Central African CFA (france)</option>
+                        </select>
+                    </label>
+                    <label for="to">To:
+                            <select id="to">
+                                <option value="MXN">Mexican Peso (MXN)</option>
+                                <option value="USD">US Dollar (USD)</option>
+                                <option value="XOF">Benise CFA (XOF)</option>
+                                <option value="INR">Indian Rupee (INR)</option>
+                                <option value="CAD">Canadian Dollar (CAD)</option>
+                                <option value="HTG">Haitian Gourde (HTG)</option>
+                                <option value="XBT">Bitcoin (BTC)</option>
+                                <option value="EUR">Cuban Peso (CUP)</option>
+                                <option value="GBP">British Pound (BGP)</option>
+                                <option value="XAF">Central African CFA (france)</option>
+                            </select>
+                    </label>
+                </form><!--End form-->
+            </div><!--End colum-->
+            <button class="btn" type="button">CALCULATE</button>
+            <h2 class="amount">
+                <span id="currency"></span>
+                <span id="total"></span>
+                <span id="country-code"></span>
+            </h2>
+        </div><!--End row-->
+    </div><!--End container-->
+    <script src="currency.js"></script>
+</body>
+</html>
