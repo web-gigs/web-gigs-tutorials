@@ -1,0 +1,180 @@
+:root{
+    --color-background:#dfe7ef;
+    --menu-item-color:rgba(0,0,0,0.65);
+    --indicator-transition:cubic-bezier(0.45,0.73,0,0.59) .3s;
+    --bottom-bar-transition:cubic-bezier(0.57,0.23,0.08,0.96) .45s;
+    --album-shadow: 3px 3px 15px rgba(0,0,0,0.65);
+    --spin-disc-shadow:0 0 10px rgba(0, 0, 0,0.8);
+    --special-hover-shadow:0px 5px 10px 0px rgba(76, 70, 124, 0.2);
+    --main-icon-shadow:0px 3px 12px rgba(0,0,0,0.8),  0px 3px 6px rgba(0,0,0,0.12);
+    --bottom-bar-image:radial-gradient(circle at 124px 6px,transparent 40px,#fff 41px);
+    --spin-disc-background: url("img/vinyl.png"), url("img/incubus-make-yourself.jpg");
+    --album-art-background:#fff url("img/incubus-make-yourself\ \(1\).jpg") no-repeat center center/cover;
+    --bottom-bar-filter:drop-shadow(0px -1px 6px rgba(0,0,0,0.08)) drop-shadow(0px -2px 12px rgba(0,0,0,0.12));
+}
+html{
+    box-sizing: border-box;
+}
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+body{
+    height: 100vh;
+    color: #515044;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-background);
+}
+.music-player-container{
+    display: inline-block;
+    height:  315px;
+    position: relative;
+    min-width: 460px;
+}
+.music-player-container::after{
+    filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.8);
+    bottom: -2px;
+    content: "";
+    display: block;
+    height: 10px;
+    left: 19px;
+    position: absolute;
+    transform: rotate(-3deg);
+    width: 70%;
+    z-index: 0;
+}
+.music-player{
+    background:#eee;
+    height:  315px;
+    padding: 40px 250px 40px 40px;
+    position: absolute;
+    text-align: right;
+    width: 460px;
+    z-index: 3;
+}
+.player-content-container{
+    position: absolute;
+    left: 10px;
+    top: 20px;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.artist-name{
+    font-size: 28px;
+    font-weight: normal;
+    margin: 0 0 0.75em 0;
+}
+.album-title{
+    color: #532ab9;
+    font-weight: bolder;
+    font-size: 24px;
+    margin: 0 0 1.75em 0;
+}
+.song-title{
+    font-size: 18px;
+    font-weight: 200;
+    margin: 0 0 1.7em 0;
+}
+.album{
+    box-shadow:var(--album-shadow);
+    height: 315px;
+    margin-left: 250px;
+    position: relative;
+    width: 315px;
+    z-index: 10;
+}
+.album-art{
+    background: var(--album-art-background);
+    height: 315px;
+    position: relative;
+    width: 315px;
+    z-index: 10;
+}
+.spin-disc{
+    animation: spin 2s linear infinite;
+    transition: all 500ms;
+    background-image:var(--spin-disc-background);
+    background-position: center center;
+    background-size: cover , 40% auto;
+    background-repeat: no-repeat;
+    border-radius: 100%;
+    box-shadow: var(--spin-disc-shadow);
+    height: 300px;
+    left:0;
+    position: absolute;
+    top: 5px;
+    width: 300px;
+    z-index: 5;
+    will-change: transform,left;
+}
+.bottom-bar{
+    position: absolute;
+    display: flex;
+    padding: 16px 16px;
+    justify-content: space-between;
+    width: 250px;
+    left: 0;
+    bottom: 0;
+    z-index: 15;
+    height: 80px;
+    font-size: 26px;
+    border-radius:0 0 5px 5px ;
+    filter:var(--bottom-bar-filter);
+    background-image: var(--bottom-bar-image);
+    transition: var(--bottom-bar-transition);
+}
+.bottom-bar .nav-indicator{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    bottom: 38px;
+    margin: auto;
+    left: 95px;
+    border-radius: 50%;
+    background-color: #000;
+    box-shadow: var(--main-icon-shadow);
+    transition: var(--indicator-transition);
+}
+.bottom-bar .menu-item{
+    color: var(--menu-item-color);
+    transition: ease-in-out;
+    cursor: pointer;
+}
+.bottom-bar .special{
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.bottom-bar .special:hover{
+    color: #532ab9;
+    background: #eee;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+    box-shadow: var(--special-hover-shadow);
+
+}
+.bottom-bar .select-current{
+    transform: translate3d(0px,-20px,0px);
+    position: relative;
+    color: #fff;
+    z-index: 3;
+}
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="img/javascript.png" type="icon/logo">
+    <link rel="stylesheet" href="Music_UI.css">
+    <title>Music UI Challenge</title>
+</head>
+<body>
+    <div class="music-player-container is-playing">
+        <div class="music-player">
+            <!--music content for music artis-->
+            <div class="player-content-container">
+                <h1 class="artist-name">Incubus</h1>
+                <h2 class="album-title"> Make Yourself</h2>
+                <h3 class="song-tile">"Stellar"</h3>
+            </div>
+        </div>
+         <!--controls for music player-->
+         <div class="bottom-bar">
+            <a href="#" class="menu-item special" id="next">
+                <i class="fa fa-forward"></i>
+            </a>
+            <a href="#" class="menu-item select-current" id="play">
+                <i class="fa fa-play"></i>
+            </a>
+            <a href="#" class="nav-indicator"></a>
+            <a href="#" class="menu-item special" id="prev">
+                <i class="fa fa-backward"></i>
+            </a>
+        </div>
+        <!--Audio Tracks for use-->
+        <audio src="music/suprime1.mp3" id="player"></audio>
+        <!--style music cover-->
+        <div class="album">
+            <div class="album-art"></div>
+            <div class="spin-disc"></div>
+        </div>
+    </div>
+    <script src="Music_UI.js"></script>
+</body>
+</html>
