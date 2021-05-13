@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="img/javascript.png" type="icon/logo">
+    <link rel="stylesheet" href="Card.css">
+    <title>Shopping Card</title>
+</head>
+<body>
+    <div class="Card-wrapper">
+        <div id="flip-card">
+            <div class="flip-card-front">
+                <section class="product_front">
+                    <img src="img/t-shirt-large2.png" alt="Unavialable">
+                    <div class="price-container">
+                        <div class="price_content">$800</div>
+                    </div>
+                </section>
+                <button id="turn-to-back">view details</button>
+            </div>
+            <div class="flip-card-back">
+                <div class="detail-card">
+                    <div class="badge">Hot</div>
+                    <div class="product-tumb">
+                        <img src="img/t-shirt-large3.png" alt="">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-catagory">Men's running shirt</span>
+                        <h4>Adidas Originals</h4>
+                        <div class="product-bottom-details">
+                            <div class="product-price">
+                                $800.00
+                            </div>
+                            <div class="product-links">
+                                <a href="#"><i class="fa fa-heart"></i></a>
+                                <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+                </div>
+                <button id="turn-to-front">view item</button>
+            </div>
+        </div>
+    </div>
+    <script src="Card.js"></script>
+</body>
+</html>
