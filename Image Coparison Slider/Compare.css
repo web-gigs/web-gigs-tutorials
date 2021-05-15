@@ -1,0 +1,66 @@
+*,*::before,*:after{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #CFD8DC;
+}
+.compare-container{
+    position: relative;
+    width: 500px;
+    height: 330px;
+    margin: 2em auto;
+    border: 3px solid #F2AA4CFF;
+}
+.before-wrap,
+.after-wrap{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.before-wrap,
+.before-wrap img{
+    left: 0;
+}
+.after-wrap,
+.after-wrap img{
+    right: 0;
+}
+.after-wrap{
+    width: 50%;
+    border-left: 2px solid #fafafa;
+}
+img{
+    max-width: 500px;
+    height: 330px;
+    display: block;
+    position: absolute;
+}
+.slider{
+    -webkit-appearance: none;
+    position: absolute;
+    top: 0;
+    left: -25px;
+    outline: none;
+    display: block;
+    height: 400px;
+    width: calc(100% + 50px);
+    background: transparent;
+}
+.slider::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    position: relative;
+    height: 50px;
+    width: 50px;
+    top: 150px;
+    left: 2px;
+    cursor:pointer;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.4) url("img/ball.png") 50%/30px 30px no-repeat;
+}
