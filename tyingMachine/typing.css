@@ -1,0 +1,165 @@
+:root{
+    --tool-color:#F2AA4CFF;
+    /*create an arct circle with background image property*/
+    --speedometer:radial-gradient(
+        100% 100% at 50% 50%,
+        rgba(0,0,0,0) 7%,
+        rgba(0,0,0,0.4) 7.25%,
+        rgba(0,0,0,0) 8%,
+        rgba(0,0,0,0) 46.5%,
+        rgb(128,128,128) 46.5%,
+        rgb(255,255,255) 48.5%,
+        rgb(208,208,208) 49.75%,
+        transparent 50%
+    );
+    --arrow-shadow: 0 0 1px 1px rgb(160,64,0) inset,0 0 1px 1px rgba(0,0,0,0.4);
+}
+html{
+    box-sizing: border-box;
+}
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(
+        0deg,
+        rgb(247,247,247) 23.8%,
+        var(--tool-color) 90%
+    );
+}
+body .main{
+    height: 560px;
+    width: 90%;
+    max-width: 440px;
+    padding: 10px 20px;
+    border: 1px solid #000;
+    background: rgb(32,32,32);
+}
+.speedometer{
+    position: relative;
+    width: 100%;
+    height: 18em;
+    overflow: hidden;
+}
+.speedometer-inner{
+    position: relative;
+    height: 23em;
+    width: 100%;
+    color: rgb(255,255,255);
+    background-image: var(--speedometer);
+    z-index: 1;
+}
+/* create style for speed value container */
+.num-wrapper{
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    margin: 0 auto;
+    border-radius: 50%;
+    left: 45%;
+    top: 38px;
+    transform: translate(-50%,0);
+}
+/* create individual speed values on the .num-wrapper container */
+div.circle{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+    border: 2px solid #000;
+    border-radius: 50%;
+}
+label,button{
+    color: #eee;
+    text-transform: uppercase;
+}
+label,textarea{
+    line-height: 1.5em;
+}
+textarea,button{
+    border: 0;
+    letter-spacing: 0.02em;
+    width: 100%;
+}
+textarea{
+    padding: 0.75em;
+}
+textarea::-webkit-scrollbar{
+    display: none;
+}
+button{
+    color: #fff;
+    font-weight: bolder;
+    padding: 1em 0;
+    cursor: pointer;
+    background-color: var(--tool-color);
+}
+button:active{
+    outline: rgb(160,64,0);
+}
+.arrow-cover{
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    background: var(--tool-color);
+    border-radius: 50%;
+    top: 49%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 10;
+}
+.arrow{
+    position: absolute;
+    background-color:var(--tool-color);
+    border-radius: 50% 50% 0 0;
+    box-shadow: var(--arrow-shadow);
+    top: 36%;
+    left: 48%;
+    transform: translate(-50%,-50%);
+    transform: rotate(-10deg);
+    width: 0.9em;
+    height: 6.8em;
+    transition: 0.5s linear;
+    z-index: 5;
+}
+.unit{
+    position: absolute;
+    font-size: 2.2em;
+    text-align: center;
+    top: 31%;
+    left: calc(50% - 1.5em);
+    width: 3em;
+}
+.unit::before{
+    content: "WPM";
+    font-size: 25px;
+}
+.wpm{
+    position: absolute;
+    left: calc(48% - 1.5em);
+    top: 62%;
+    background-color: rgb(255,255,255);
+    border-radius: 0.2em;
+    box-shadow: 0 0.05em rgba(0,0,0,0.5);
+    min-width: 70px;
+    line-height: 30px;
+    padding: 5px;
+}
+.wpm>span{
+    position: relative;
+    transform: translate(0,50%);
+    left: 5px;
+    color: #000;
+    font-size: 30px;
+    z-index: 1;
+    font-weight: bolder;
+}

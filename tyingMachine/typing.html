@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/javascript.png" type="icon/logo">
+    <link rel="stylesheet" href="typing.css">
+    <title>Typing Machine</title>
+</head>
+<body>
+    <div class="main">
+        <div class="speedometer">
+            <!--wrap all typing measurement units in one box-->
+            <div class="speedometer-inner">
+                <div class="num-wrapper"></div>
+                <div class="arrow-cover"></div>
+                <div class="arrow"></div>
+                <div class="unit"></div>
+                <div class="wpm">
+                    <span id="unit">000</span>
+                </div>
+            </div>
+        </div>
+        <!--create a textarea typing baord-->
+        <form action="">
+            <label for="textInput">type to test your typing speed!</label>
+            <textarea id="textInput" cols="36" rows="8"></textarea>
+            <button type="reset">Reset</button>
+        </form>
+    </div>
+    <script src="typing.js"></script>
+</body>
+</html>
