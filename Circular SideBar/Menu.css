@@ -1,0 +1,98 @@
+:root{
+    --fab-shadow:0 5px 10px rgba(0,0,0,0.2);
+    --box-shadow:0 12px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+html{
+    box-sizing: border-box;
+}
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image:linear-gradient(to bottom,#8cc4f8,#5b62e7) ;
+}
+.mobile-wrap{
+    margin: auto;
+    width: 90%;
+    max-width: 350px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    background: #fafafa url("img/breage2.jpeg") no-repeat center center;
+    box-shadow: var(--box-shadow);
+}
+.nav{
+    width: 60px;
+    height: 60px;
+    position:absolute;
+    bottom: 25px;
+    right: 25px;
+    background: rgb(252, 61, 61);
+    border-radius: 50%;
+    transition: all 0.5s;
+    box-shadow: var(--box-shadow);
+}
+.fab{
+    border: none;
+    outline: none;
+    color: #fafafa;
+    background-color:rgb(252, 0, 0);
+    border-radius: 50%;
+    width: 80px;
+    height:80px;
+    position: absolute;
+    left: 30px;
+    bottom: 0;
+    cursor: pointer;
+    transform: translate(-50%,0);
+    transition: all 0.5s;
+    box-shadow: var(--fab-shadow);
+}
+.fab:hover{
+    background-color:rgb(255, 72, 72);
+}
+#plus{
+    transition: all 0.5s;
+    font-size: 20px;
+}
+.nav>i{
+    position: absolute;
+    color: #fafafa;
+    font-size: 30px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+/*create a open class that will be activated in JavaScript */
+.nav.open{
+    height: 350px;
+    width: 350px;
+    right: -120px;
+    bottom: -120px;
+}
+.open .fab{
+    position: absolute;
+    left: 180px;
+    bottom: 140px;
+}
+/* get the first icon when open class is active */
+.open i:nth-child(1){
+    transform: translate(50px,180px);
+}
+/* get the second icon when open class is active */
+.open i:nth-child(2){
+    transform: translate(60px,120px);
+}
+/* get the third icon when open class is active */
+.open i:nth-child(3){
+    transform: translate(100px,60px);
+}
+/* get the fourth icon when open class is active */
+.open i:nth-child(4){
+    transform: translate(170px,30px);
+}
