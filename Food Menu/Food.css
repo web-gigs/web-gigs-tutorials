@@ -1,0 +1,131 @@
+html{
+    box-sizing: border-box;
+}
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+body{
+    height: 100vh;
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(245,219,186);
+    font-family: monospace,serif;
+}
+.wrapper{
+    width: 80%;
+    max-width: 300px;
+    border-radius: 5px;
+    padding-bottom: 10px;
+    background: #333;
+    box-shadow: 0 20px 35px rgba(60,60,60,0.2);
+}
+.wrapper .food{
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+.food img,.food .background-wrapper{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transition: all 0.6s;
+}
+.food .background-wrapper{
+    filter: brightness(40%);
+    border: 2px solid #333;
+    border-radius: 5px 5px 0 0;
+    background: #eee url("img/background.jpg") no-repeat center center/cover;
+}
+#menu{
+    height: 50px;
+    width: fit-content;
+    padding: 16px;
+    overflow: hidden;
+    font-weight: bold;
+    border-radius: 5px;
+    background: #fff;
+    margin: 0 auto;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 7px 15px 0 rgba(214,214,214,0.35);
+}
+#menu:hover{
+    border: 1px solid #fafafa;
+    box-shadow: 0 0 5px #fafafa,
+                0 0 5px #fafafa;
+}
+#menu-main{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#current-option{
+    position: relative;
+}
+#next-option{
+    width: 12px;
+    height: 10px;
+    border: none;
+    display: block;
+    cursor: pointer;
+    position: relative;
+    background: transparent;
+}
+#width-fix{
+    opacity: 0;
+    pointer-events: none;
+    padding-right: 40px;
+}
+#width-fix span{
+    display: block;
+}
+/* Add animation to food menu*/
+#menu.anim{
+    pointer-events: none;
+    animation: next-wrapper 0.6s;
+}
+.anim #current-option{
+    animation: next 0.6s 0.085s;
+}
+#next-option{
+    animation: next 0.6s;
+}
+/* Attach animation to images*/
+.anim img{
+    animation: slide-in 0.6s cubic-bezier(0.645,0.045,0.355,1.000) forwards;
+}
+/*Initialize animation using keyframes*/
+@keyframes next{
+    50%,55%{
+        transform: translateY(52px);
+    }
+    to{
+        transform: translateY(50px);
+    }
+}
+@keyframes next-wrapper{
+    50%{
+        transform: translateY(3px);
+    }
+}
+/*Create animation for food images*/
+@keyframes slide-in{
+    0%{
+        transform: translateY(0);
+        filter: brightness(5%);
+    }
+    50%{
+        transform: translateY(300px);
+        filter: brightness(10%);
+    }
+    100%{
+        transform: translateY(0);
+        filter: brightness(100%);
+    }
+}
