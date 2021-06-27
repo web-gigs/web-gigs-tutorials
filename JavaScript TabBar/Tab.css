@@ -1,0 +1,86 @@
+html{
+    box-sizing: border-box;
+}
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    font-family: monospace;
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+        315deg,
+        #ffcad5,
+        #ffe1e1
+    );
+}
+.navigation-tab{
+    height: 100px;
+    width: 300px;
+    overflow:hidden;
+    display: flex;
+    position: relative;
+    flex-shrink: 0;
+    background-color: #2B3134;
+}
+.tab-item{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 65px;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+    z-index: 2;
+}
+.tab-icon img{
+    height: 32px;
+    width: 32px;
+}
+.tab-icon{
+    transform: translate(0px,5.5px);
+}
+.nav-text{
+    opacity: 0;
+    transform: translate(0,10px);
+}
+.tab-overlay{
+    height: 100%;
+    width: 105px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.3s;
+    background-color: #f7ccaf;
+}
+.tab-icon{
+    line-height: 1;
+    transition-duration:0.3s;
+    transform: translate(0,11px);
+}
+.nav-text{
+    display: block;
+    font-weight: bolder;
+    font-size: 15px;
+    text-transform: capitalize;
+    transition-duration: 0.3s;
+    transform: translate(0,20px);
+    user-select: none;
+}
+/*fetch active class*/
+.tab-item.active{
+    width: 105px;
+}
+.active .nav-text{
+    opacity: 1;
+    color: #ff6700;
+    font-weight: bolder;
+    transform: translateY(10px);
+}
